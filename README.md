@@ -1,4 +1,4 @@
-<h1 align="center">Discord Qr Code Token</h1>
+<h1 align="center">Discord Token AutoLogin</h1>
 <p align="center">Enter a token and automatically log into the account without doing anything.</p>
 Enter the token of a person and wait... The script will automatically connect you to the person's account without you having to touch your mouse/keyboard.
 
