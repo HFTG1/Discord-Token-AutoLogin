@@ -35,34 +35,8 @@ window.title("Auto-Login by Astraa")
 window.geometry('350x150')
 window.mainloop()
 
-driver = webdriver.Chrome()
-driver.maximize_window()
-pyperclip.copy("""function login(token) {
-setInterval(() => {
-document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token = `"${token}"`
-}, 50);
-setTimeout(() => {
-location.reload();
-}, 2500);
-}""")
+driver = webdriver.Chrome('chromedriver.exe')
 driver.get('https://discord.com/login')
-time.sleep(2)
-pyautogui.hotkey('ctrl', 'shift', 'i')
-time.sleep(1)
-pyautogui.click(x=1540, y=130, button='left')
-pyautogui.click(x=1410, y=155, button='left')
-pyautogui.click(x=1400, y=177, button='left')
-pyautogui.hotkey('ctrl', 'v')
-pyautogui.press('enter')
-time.sleep(2)
-pyautogui.write('login')
-pyperclip.copy("('")
-pyautogui.hotkey('ctrl', 'v')
-pyperclip.copy(token)
-pyautogui.hotkey('ctrl', 'v')
-pyperclip.copy("')")
-pyautogui.hotkey('ctrl', 'v')
-pyautogui.press('enter')
-time.sleep(1)
-pyautogui.click(x=525, y=700, button='left')
-pyautogui.click(x=1906, y=128, button='left')
+js = 'function login(token) {setInterval(() => {document.body.appendChild(document.createElement `iframe`).contentWindow.localStorage.token = `"${token}"`}, 50);setTimeout(() => {location.reload();}, 500);}'
+time.sleep(3)
+driver.execute_script(js + f'login("{token}")')
