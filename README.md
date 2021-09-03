@@ -13,10 +13,6 @@
  - No data caching.
  - External Python modules needed.
 
-# Disfunction
- - You must use a basic revolution (1920/1080 16:9).
- - Do not touch your mouse or keyboard while running the script.
-
 # How to use
  1. Install external modules.
  2. Launch [autologin.py](autologin.py).
